@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*Colors*/
+    --Light-red: 0, 100%, 67%;
+    --orangey-yellow: 39, 100%, 56%;
+    --Green-teal: 166, 100%, 37%;
+    --Cobalt-blue: 234, 85%, 45%;
+
+    /*Gradients*/
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+
+    --Violet-blue: hsla(256, 72%, 46%, 1);
+    --Persian-blue: hsla(241, 72%, 46%, 0);
+
+    /*Neutral*/
+    --White: hsl(0, 0%, 100%);
+    --White-transparent: hsla(0, 0%, 100%, 0.6);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+
+    /*Font*/
+    --font-size-p: 18px;
+    --font-family: 'Hanken Grotesk', sans-serif;
+}
+
+
+main{
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-weight: 500;
+}
+
+p{
+    font-size: var(--font-size-p);
+    text-align: center;
+    margin: 10px 0;
+}
+
+.white-trans{
+    color: var(--White-transparent);
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 650px;
+    max-height: 50vh;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 14px 14px 18px var(--Pale-blue);
+}
+
+/*Left side*/
+.left{
+    background-image: linear-gradient(180deg, var(--Light-slate-blue), var(--Light-royal-blue));
+    color: var(--White);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.circle{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    margin: 25px 0;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1;
+    background-image: linear-gradient(180deg, var(--Violet-blue), var(--Persian-blue));
+}
+
+.score-header{
+    font-size: 4em;
+    font-weight: 800;
+}
+
+/*Right side*/
+.right{
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.summary{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.summary-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 15px;
+    border-radius: 10px;
+}
+.summary-item img{
+    margin-right: 10px;
+}
+.icon-name{
+    display: flex;
+}
+
+.reaction{
+    background-color: hsla(var(--Light-red), 0.05);
+    color: hsl(var(--Light-red));
+}
+.memory{
+    background-color: hsla(var(--orangey-yellow), 0.05);
+    color: hsl(var(--orangey-yellow));
+}
+.verbal{
+    background-color:  hsla(var(--Green-teal), 0.05);
+    color: hsl(var(--Green-teal));
+}
+.visual{
+    background-color: hsla(var(--Cobalt-blue), 0.05);
+    color: hsl(var(--Cobalt-blue));
+}
+.your-score{
+    color: black;
+    font-weight: 700;
+}
+.max-score{
+    color: grey;
+    font-weight: 700;
+}
+.btn{
+    color: var(--White);
+    background-color: var(--Dark-gray-blue);
+	border: none;
+	padding: 15px;
+	cursor: pointer;
+	outline: inherit;
+    border-radius: 40px;
+    width: 100%;
+    font-size: 15px;
+}
+.btn:hover{
+    background-image: linear-gradient(180deg, var(--Light-slate-blue), var(--Light-royal-blue));
+}
+
+
+/*Repsonsive*/
+@media (max-width: 767px) {
+    .card{
+        display: block;
+        flex-direction: column;
+        width: 100vw;
+        max-height: max-content;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    main{
+        display: block;
+    }
+    .left{
+        border-radius: 0 0 20px 20px;
+        height: fit-content;
+    }
+    .right h2{
+        margin: 20px 0;
+    }
+    .btn{
+        margin: 20px 0;
+    }
+}
